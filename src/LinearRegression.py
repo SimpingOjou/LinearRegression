@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def compute_error_for_line_given_points(b, m, points):
     '''
-    Compute the error for a line given the points and the slope and y-intercept of the line.
+        Compute the error for a line given the points and the slope and y-intercept of the line.
     '''
     totalError = 0
 
@@ -48,7 +48,7 @@ def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_i
     return b, m
 
 if __name__ == '__main__':
-    points = np.genfromtxt("data.csv", delimiter=",")
+    points = np.genfromtxt("./src/data.csv", delimiter=",")
     learning_rate = 0.0001
     initial_b = 0 # initial y-intercept guess
     initial_m = 0 # initial slope guess

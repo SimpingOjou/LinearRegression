@@ -14,10 +14,26 @@ num_iterations = 1000
 
 Using these parameters a gradient descent search is executed on a sample data set.
 
+A more generalized solution has been adopted in `MultivariateLinearRegression.py` following the formulas below:
+
+<img src='/img/Cost-Function.jpg'>
+
+Where 
+
+-> $θ_j$     : Weights of the hypothesis.
+-> $h_θ{(x_i)}$ : predicted y value for ith input.
+-> $i$     : Feature index number (can be $0, 1, 2, ......, n$).
+-> $α$     : Learning Rate of Gradient Descent.
+-> $J(\varTheta_0,\varTheta_1)$ : Loss function or error function
+
 # Dependencies
 
 Install all dependencies with `pip install -r requirements.txt`.
 
 # Credits
 
-[mattnedrich](https://github.com/mattnedrich) for the original script.
+[mattnedrich](https://github.com/mattnedrich) for the non generalized version of the script.
+
+[Tan-Moy](https://github.com/Tan-Moy) for the multivariate version of the script
+
+[geeksforgeeks](https://www.geeksforgeeks.org/gradient-descent-in-linear-regression/) for the image
