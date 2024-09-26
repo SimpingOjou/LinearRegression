@@ -55,10 +55,15 @@ if __name__ == '__main__':
     num_iterations = 1000
 
     error = []
+    b_list = []
+    m_list = []
+
     for i in range(num_iterations):
         if i == 0:
             b, m = step_gradient(initial_b, initial_m, points, learning_rate)
             error.append(compute_error_for_line_given_points(b, m, points))
+            b_list.append(b)
+            m_list.append(m)
 
             print("Starting gradient descent at b = {0}, m = {1}, error = {2}".format(initial_b, initial_m, error[i]))
             print("Running...")
@@ -67,12 +72,14 @@ if __name__ == '__main__':
 
         b, m = step_gradient(b, m, points, learning_rate)
         error.append(compute_error_for_line_given_points(b, m, points))
+        b_list.append(b)
+        m_list.append(m)
 
         if i == num_iterations - 1:
             print("After {0} iterations b = {1}, m = {2}, error = {3}".format(num_iterations, b, m, error[i]))
 
-    plt.figure(figsize=(15,6))
-    plt.subplot(1, 2, 1)
+    plt.figure(figsize=(12,8))
+    plt.subplot(2, 2, 1)
     plt.scatter(points[:, 0], points[:, 1], label='Data points')
     plt.plot(points[:, 0], initial_m * points[:, 0] + initial_b, color='red', label='Before')
     plt.plot(points[:, 0], m * points[:, 0] + b, color='green', label='After')
@@ -83,13 +90,23 @@ if __name__ == '__main__':
     plt.legend()
     plt.grid()
 
-    plt.subplot(1, 2, 2)
+    plt.subplot(2, 2, 2)
 
     plt.loglog(range(num_iterations), error, label='Error')
 
     plt.xlabel("Iterations")
     plt.ylabel("Error")
     plt.title("Error over iterations")
+    plt.legend()
+    plt.grid()
+
+    plt.subplot(2, 2, (3,4))
+
+    plt.plot(b_list, m_list, label='Path', marker='o')
+
+    plt.xlabel("b")
+    plt.ylabel("m")
+    plt.title("Gradient descent path")
     plt.legend()
     plt.grid()
 
