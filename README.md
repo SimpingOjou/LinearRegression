@@ -20,11 +20,11 @@ A more generalized solution has been adopted in `MultivariateLinearRegression.py
 
 Where 
 
--> $θ_j$     : Weights of the hypothesis.
--> $h_θ{(x_i)}$ : predicted y value for ith input.
--> $i$     : Feature index number (can be $0, 1, 2, ......, n$).
--> $α$     : Learning Rate of Gradient Descent.
--> $J(\varTheta_0,\varTheta_1)$ : Loss function or error function
+- $θ_j$     : Weights of the hypothesis.
+- $h_θ{(x_i)}$ : predicted y value for ith input.
+- $i$     : Feature index number (can be $0, 1, 2, ......, n$).
+- $α$     : Learning Rate of Gradient Descent.
+- $J(\varTheta_0,\varTheta_1)$ : Loss function or error function
 
 # Dependencies
 
